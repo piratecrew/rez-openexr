@@ -16,6 +16,18 @@ def build_requires():
 
 build_command = "make -f {root}/Makefile {install}"
 
+tools = [
+    "exr2aces",
+    "exrenvmap",
+    "exrheader",
+    "exrinfo",
+    "exrmakepreview",
+    "exrmaketiled",
+    "exrmultipart",
+    "exrmultiview",
+    "exrstdattr",
+]
+
 def commands():
     env.LD_LIBRARY_PATH.append("{root}/lib64")
     if building:
