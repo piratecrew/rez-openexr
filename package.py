@@ -29,6 +29,7 @@ tools = [
 ]
 
 def commands():
+    env.PATH.prepend("{root}/bin")
     env.LD_LIBRARY_PATH.append("{root}/lib64")
     if building:
         env.OpenEXR_ROOT="{root}" # CMake Hint
