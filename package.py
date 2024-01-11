@@ -1,18 +1,15 @@
 name = "openexr"
 
-version = "3.1.3"
+version = "3.1.11"
 
-@early()
-def build_requires():
-    # check if the system gcc is too old <9
-    # then we require devtoolset-9
-    requirements = ["cmake-3.15+<4"]
-    from subprocess import check_output
-    gcc_major = int(check_output(r"gcc -dumpversion | cut -f1 -d.", shell=True).strip().decode())
-    if gcc_major < 9:
-        requirements.append("devtoolset-9")
+build_requires = [
+    "cmake-3.15+<4",
+    "gcctoolset-9",
+]
 
-    return requirements
+requires = [
+    "imath-3+<4",
+]
 
 build_command = "make -f {root}/Makefile {install}"
 
