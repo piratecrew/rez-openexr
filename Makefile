@@ -41,10 +41,10 @@ $(BUILD_DIR): # Prepare build directories
 	mkdir -p $(BUILD_DIR)
 
 $(SOURCE_DIR): | $(BUILD_DIR) # Clone the repository
-	cd $(BUILD_ROOT) && git clone $(REPOSITORY_URL)
+	cd $(BUILD_ROOT) && git fetch --all && git clone $(REPOSITORY_URL)
 
 build: $(SOURCE_DIR) # Checkout the correct tag and build
-	cd $(SOURCE_DIR) && git checkout $(TAG)
+	cd $(SOURCE_DIR) && git fetch --all && git checkout $(TAG)
 	cd $(BUILD_DIR) && cmake $(CMAKE_ARGS) $(SOURCE_DIR) && make
 
 

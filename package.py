@@ -1,6 +1,6 @@
 name = "openexr"
 
-version = "3.1.11"
+version = "3.2.4"
 
 build_requires = [
     "cmake-3.15+<4",
@@ -8,7 +8,7 @@ build_requires = [
 ]
 
 requires = [
-    "imath-3+<4",
+   "imath-3.1"
 ]
 
 build_command = "make -f {root}/Makefile {install}"
