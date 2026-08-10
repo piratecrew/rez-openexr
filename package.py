@@ -2,9 +2,12 @@ name = "openexr"
 
 version = "3.2.4"
 
+private_build_requires = [
+    "gcc-11"
+]
+
 build_requires = [
     "cmake-3.15+<4",
-    "gcctoolset-9",
 ]
 
 requires = [
